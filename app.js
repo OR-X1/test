@@ -20,11 +20,11 @@ app.use(express.json());
 app.use('/api/test', require('./routes/index'));
 
 
-
+const port = process.env.PORT || 3000
 
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(result => app.listen(3000, () => {
+  .then(result => app.listen(port, () => {
     console.log('mongodb is connected')
     console.log("Up Server : http://localhost:3000")
     }) )
